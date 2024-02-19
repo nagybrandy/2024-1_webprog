@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+
+  <!-- Font Awesome Icons -->
+  <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.10.2/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>Új recept</h2>
+
+    <form class="form-horizontal" method="get" data-toggle="validator">
+      <div class="form-group has-feedback">
+        <label for="name" class="col-lg-2 control-label">Recept neve</label>
+        <div class="col-lg-10">
+          <input required type="text" class="form-control" id="name" name="name" placeholder="Recept neve" value="Palacsinta">
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="form-group has-feedback">
+        <label for="ingredients" class="col-lg-2 control-label">Hozzávalók</label>
+        <div class="col-lg-10">
+          <textarea required class="form-control" rows="3" id="ingredients" name="ingredients">1csipet só
+3kanál cukor
+2db tojás
+500g liszt</textarea>
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="reset" class="btn btn-default">Mégsem</button>
+          <button type="submit" class="btn btn-primary">Küldés</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
