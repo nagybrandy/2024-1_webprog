@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elastic textarea</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Elastic textarea</h1>
+
+    <h2>Elastic textarea</h2>
+    <textarea cols="30" rows="2" data-elastic></textarea>
+
+    <h2>Inelastic textarea</h2>
+    <textarea cols="30" rows="2"></textarea>
+
+    <h2>Elastic textarea (3-6)</h2>
+    <textarea
+      cols="30"
+      rows="2"
+      data-elastic
+      data-min-rows="3"
+      data-max-rows="6"
+    ></textarea>
+
+    <script src="index.js"></script>
+  </body>
+</html>

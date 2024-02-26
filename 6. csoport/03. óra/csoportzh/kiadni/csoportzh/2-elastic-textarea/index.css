@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap");
+
+html {
+  background-image: linear-gradient(
+    to right bottom,
+    #b3e2ff,
+    #89f0ff,
+    #76fce8,
+    #99ffba,
+    #d9ff85
+  );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+body {
+  font-family: "MuseoModerno", cursive;
+  font-size: large;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+}
+textarea {
+  font-family: "MuseoModerno", cursive;
+  font-size: large;
+  resize: none;
+}

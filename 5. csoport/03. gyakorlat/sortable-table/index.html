@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .kivalasztott::after {
+            content: "⬇️";
+        }
+    </style>
+</head>
+<body>
+    <h2>sortable-table</h2>
+    <h4>A csoport macskái 😺</h4>
+        <table class="sortableTable" is="sortable-table">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Szín</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lajos</td>
+                    <td>fehér</td>
+                </tr>
+                <tr>
+                    <td>Bubi</td>
+                    <td>barna</td>
+                </tr>
+                <tr>
+                    <td>Jankó</td>
+                    <td>narancs</td>
+                </tr>
+                <tr>
+                    <td>Leó</td>
+                    <td>cirmos</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table is="sortable-table">
+            <thead>
+              <tr>
+                <th>Fajta</th>
+                <th>Leírás</th>
+                <th>Árnyalat</th>
+                <th>Átlagos méret</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Persian</td>
+                <td>Hosszú szőrű, lapos orrú</td>
+                <td>Többféle</td>
+                <td>Nagy</td>
+              </tr>
+              <tr>
+                <td>Siamese</td>
+                <td>Rövid szőrű, kék szemű</td>
+                <td>Fejénél sötétebb</td>
+                <td>Közepes</td>
+              </tr>
+              <tr>
+                <td>Maine Coon</td>
+                <td>Hosszú szőrű, erős termetű</td>
+                <td>Általában szürke</td>
+                <td>Nagy</td>
+              </tr>
+              <tr>
+                <td>Bengal</td>
+                <td>Közepes szőrű, tigrismintás</td>
+                <td>Fekete, barna</td>
+                <td>Közepes</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <h2>lengthy-input</h2>
+          <input type="text" is="lengthy-input">
+          <hr>
+          <h2>filterable-list</h2>
+          <ul is="filterable-list">
+            <li>Joghurt</li>
+            <li>Hell</li>
+            <li>Vaj</li>
+            <li>Zsebkendő</li>
+            <li>Rakéta</li>
+          </ul>
+    <script src="sortableTable.js"></script>
+    <script src="filterableList.js"></script>
+    <script src="lengthyInput.js"></script>
+</body>
+</html>
