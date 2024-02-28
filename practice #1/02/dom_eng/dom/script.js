@@ -38,8 +38,26 @@ button3.addEventListener('click', ()=> {
 })
 
 // Task 4
-console.log(document.querySelectorAll('a')[7])
+const links = document.querySelectorAll('a')
+const ul = document.querySelector('#hyperlinksList')
+
+links.forEach( link => {
+    const li = document.createElement('li')
+    li.innerText = link.href
+    ul.append(li)
+})
+
 // Task 5
+const button5 = document.querySelector('#task5 button')
+const input5 = document.querySelector('#task5 input')
+const imageContainer = document.querySelector('#imageContainer')
+
+button5.addEventListener('click', ()=> {
+    const img = document.createElement('img')
+    img.src = input5.value
+    img.style.width = '500px'
+    imageContainer.append(img)
+})
 
 // Task 6
 const children = [
@@ -50,6 +68,48 @@ const children = [
     { name: "Emma", class: "1/E", age: 6 }
 ];
 
+const table6 = document.querySelector('#task6 table')
+const inputs = document.querySelectorAll('#task6 input')
+const button6 = document.querySelector('#task6 button')
+
+button6.addEventListener('click', ()=> {
+    const data = [...inputs].map(e => e.value)
+    console.log(data)
+    const tr = document.createElement('tr')
+    data.forEach(cell => {
+        const td = document.createElement('td')
+        td.innerText = cell
+        tr.append(td)
+    })
+    table6.append(tr)
+})
+
+children.forEach(kid =>{
+    const tr = document.createElement('tr')
+    Object.values(kid).forEach(prop => {
+        const td = document.createElement('td')
+        td.innerText = prop
+        tr.append(td)
+    })
+    table6.append(tr)
+})
+
+/* BAD :) 
+document.querySelectorAll('#task6 td').forEach(e=>{
+    e.addEventListener('click', ()=> {
+        e.style.backgroundColor = 'green'
+    }) 
+})
+*/
+table6.addEventListener('mouse', (e)=> {
+    // delegating -> the event bubbles down to each descendant
+    console.log(e.ctrlKey)
+    if(e.target.matches('td')) {
+        if(!e.ctrlKey) e.target.style.backgroundColor = 'green'
+        else e.target.style.backgroundColor = 'unset'
+    }
+
+})
 // Task 7
 const booksList = [
     {
