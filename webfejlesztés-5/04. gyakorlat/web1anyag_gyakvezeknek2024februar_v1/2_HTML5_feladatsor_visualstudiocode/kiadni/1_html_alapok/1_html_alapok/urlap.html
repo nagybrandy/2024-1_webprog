@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Űrlap</title>
+    <link rel="stylesheet" href="css/alap.css">
+</head>
+<body>
+    <header>
+        <nav id="tartalomraugras">
+            <h2 class="rejtett">Ugrás az oldalon belül</h2>
+            <a href="#tartalom">Ugrás a tartalomra</a>
+        </nav>
+        <h1>A legjobb &lt;internetes/webes&gt; témájú filmek</h1>
+        <nav id="fomenu">
+            <h2 class="rejtett">Főmenü</h2>
+            <a href="index.html">Kezdőlap</a><b>Új film beküldése</b>
+        </nav>
+        <div id="bevezeto" class="hasab">
+            <article>
+                <h2>Űrlap</h2>
+                <p>Töltsd ki ezt az űrlapot!</p>
+            </article>
+        </div>
+    </header>
+    <main id="tartalom">
+        <h2>Saját kedvenc film beküldése</h2>
+
+        <form action="mailto:gipszjakab@mailinator.com" method="post">
+            <fieldset>
+                <legend>A film adatai</legend>
+                <label for="titlehun"><strong>Magyar cím</strong></label>
+                <input type="text" name="titlehun" id="">
+                <label for="titlehun"><strong>Angol cím</strong></label>
+                <input type="text" name="titleeng" id="">
+                <label for="titlehun"><strong>IMDb Webcím</strong></label>
+                <input type="text" name="titlehun" id="" value="http://www.imdb.com/">
+                <label for="cselekmeny"><strong>Cselekmény</strong></label>
+                <textarea name="cselekmeny" id="" cols="60" rows="10"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Adataim</legend>
+                <label for="name"><strong>Név</strong></label>
+                <input type="text" name="name" id="">
+                <label for="email"><strong>Email cím</strong></label>
+                <input type="email" name="email" id="">
+                <label for="ertekeles"><strong>Értékelés</strong></label>
+                1<input type="radio" name="ertekeles" id="">
+                2<input type="radio" name="ertekeles" id="">
+                3<input type="radio" name="ertekeles" id="">
+                4<input type="radio" name="ertekeles" id="">
+                5<input type="radio" name="ertekeles" id="">
+            </fieldset>
+            <fieldset>
+                <legend>Adatok elküldése</legend>
+                <input type="submit" value="Küldés">
+                <input type="reset" value="Törlés">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <address>
+            Készítette: Gipsz Jakab <br>(<a
+                href="mailto:gipszjakab@mailinator.com">gipszjakab@mailinator.com</a><!--link vége-->)<br>1117 Budapest,
+            Nevenincs u. 17
+        </address>
+    </footer>
+</body>
+</html>
