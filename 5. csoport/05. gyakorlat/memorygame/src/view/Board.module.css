@@ -1,0 +1,6 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 640px;
+  perspective: 1000px;
+}
