@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/alap.css">
+    <style>
+        input:not([type="radio"]):not([type="checkbox"]):not([type='submit']):not([type='reset']), label:not([for='hirlevel']) {
+            display: block;
+            width: 300px;
+        }
+        label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="tartalomraugras">
+            <h2 class="rejtett">Ugrás az oldalon belül</h2>
+            <a href="#tartalom">Ugrás a tartalomra</a>
+        </nav>
+        <h1>A legjobb &lt;internetes/webes&gt; témájú filmek</h1>
+        <nav id="fomenu">
+            <h2 class="rejtett">Főmenü</h2>
+            <a href="index.html">Kezdőlap</a> <b>Új film beküldése</b>
+        </nav>
+        <div id="bevezeto" class="hasab">
+            <article>
+                <h2>Űrlap</h2>
+            </article>
+            <p>Gyűjtsük össze együtt a legjobb filmeket! Ha ismersz olyan filmet, amit érdemes felvenni a listába, kérlek töltsd ki az alábbi űrlapot!</p>
+        </div>
+    </header>
+    <main>
+        <h2>Saját kedvenc beküldése</h2>
+        <form action="mailto:bendeguznagy55@gmail.com" method="get">
+            <fieldset>
+                <legend>A film adatai</legend>
+                <label for="titlehun">Cím (magyarul)</label>
+                <input type="text" name="titlehun" id="" class="teljes">
+
+                <label for="titleeng">Cím (angolul)</label>
+                <input type="text" name="titleeng" id="" class="teljes">
+
+                <label for="imdb">IMDb webcím</label>
+                <input type="text" name="imdb" id="" value="http://www.imdb.com/" class="teljes">
+                <label for="imdb">Üzenet</label>
+                <textarea cols="40" rows="10"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Értékelés</legend>
+                <label for="ertekeles">Értékeld az oldalt!</label>
+                1<input type="radio" name="ertekeles" id="" value="1">
+                2<input type="radio" name="ertekeles" id="" value="2">
+                3<input type="radio" name="ertekeles" id="" value="3">
+                4<input type="radio" name="ertekeles" id="" value="4">
+                5<input type="radio" name="ertekeles" id="" value="5">
+            </fieldset>
+            <fieldset>
+                <legend>Adataid</legend>
+                <label for="name">Név</label>
+                <input type="text" name="name" id="" class="teljes">
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="" required class="teljes">
+
+                <input type="checkbox" name="hirlevel" id="" checked> <label for="hirlevel">Feliratkozok a hírlevélre</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Adatok elküldése</legend>
+                <input type="submit" value="Küldés">
+                <input type="reset" value="Törlés">
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
