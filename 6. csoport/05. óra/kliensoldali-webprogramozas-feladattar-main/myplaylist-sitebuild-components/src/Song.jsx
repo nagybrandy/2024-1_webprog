@@ -1,17 +1,19 @@
 import React from 'react'
 import bonjoviPic from "../sitebuild/assets/bonjovi.jpg"
+import { exampleTracks as tracks } from "../sitebuild/domain/track"
 
 const Song = ({selectedSong}) => {
+const song = tracks.find(e => e.id === selectedSong)
   return (
-    selectedSong && (<div className="ui segment">
+    <div className="ui segment">
     <div className="ui items">
       <div className="item">
         <div className="image">
           <img src={bonjoviPic} />
         </div>
         <div className="content">
-          <a className="header">{selectedSong.title}</a>
-          <div className="meta"><span>{selectedSong.artist}</span><span>4:35</span></div>
+          <a className="header">{song.title}</a>
+          <div className="meta"><span>{song.artist}</span><span>4:35</span></div>
           <div className="extra">
             <a
               href="https://open.spotify.com/track/0v1XpBHnsbkCn7iJ9Ucr1l"
@@ -38,7 +40,7 @@ const Song = ({selectedSong}) => {
         </div>
       </div>
     </div>
-  </div>)
+  </div>
   )
 }
 

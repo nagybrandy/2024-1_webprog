@@ -1,25 +1,19 @@
 import React from 'react'
-import { examplePlaylists as pl } from '../sitebuild/domain/playlist'
-
-const PlaylistList = ({selectedPl, setSelectedPl, setSelectedSong}) => {
-    console.log(selectedPl)
-
-    const handleClick = (e)=> {
-        setSelectedPl(e)
-        setSelectedSong(null)
-    }
+import { examplePlaylists as playlist } from "../sitebuild/domain/playlist"
+const PlaylistsList = ({selectedPl,setSelectedPl}) => {
     return (
         <>
             <h3>Playlists</h3>
             <div className="ui very relaxed selection list">
-                {pl.map(e =>
-                    <div className={`item ${e.id===selectedPl.id ? "active": ""}`} key={e.id} onClick={()=> handleClick(e)}>
+                {playlist.map(e =>
+                    <div className={`item ${selectedPl === e.id ? "active" : ""}`} key={e.id} onClick={()=> setSelectedPl(e.id)}>
                         <i className="large compact disc middle aligned icon"></i>
                         <div className="content">
                             <a className="header">{e.title}</a>
                             <div className="description">{e.tracks.length} songs</div>
                         </div>
-                    </div>)}
+                    </div>
+                )}
 
                 <div className="item" id="newPlaylist">
                     <i className="large green plus middle aligned icon"></i>
@@ -33,4 +27,4 @@ const PlaylistList = ({selectedPl, setSelectedPl, setSelectedSong}) => {
     )
 }
 
-export default PlaylistList
+export default PlaylistsList
