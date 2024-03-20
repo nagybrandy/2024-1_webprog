@@ -9,7 +9,8 @@ const bird = {
     y: canvas.height/2,
     w: 50,
     h: 40,
-    speed: 140,
+    vy: 0, // velocity - y angle (vertical angle) px/s
+    ay: 250, // acceleration - y angle (vertical) px/s^2
     img: document.querySelector('#bird')
 }
 
@@ -40,29 +41,54 @@ function getRndInteger(min, max) {
 
 let lastFrameTime = performance.now()
 
+let game = true
 function gameLogic(currentTime = performance.now()){
-    let dt =  (currentTime - lastFrameTime) / 1000
-    lastFrameTime = currentTime
-    //console.log(dt)
-    stateUpdater(dt)
-    draw()
-    requestAnimationFrame(gameLogic)
+    if(game){
+        let dt =  (currentTime - lastFrameTime) / 1000
+        lastFrameTime = currentTime
+        //console.log(dt)
+        stateUpdater(dt)
+        draw()
+        requestAnimationFrame(gameLogic)
+    }
 }
 
 const stateUpdater = (dt) => {
-    bird.y += bird.speed * dt
-    columns.forEach(c => c.x -= 100 * dt )
+    bird.vy += bird.ay * dt
+    bird.y += bird.vy * dt
+    columns.forEach(c => {
+        c.x -= 100 * dt
+        if(isColliding(bird, c)) gameOver()
+    })
     if(columns[0].x < 0) {
         newColumns()
         points++;
     }
+    if(bird.y < 0 || bird.y > canvas.height)  gameOver()
+}
+
+function gameOver(){
+
+    bird.y = canvas.height/2
+    bird.ay = 250
+    bird.vy = 0
+    game = false
 }
 document.addEventListener('keypress', (e)=> {
     if(e.code == 'Space') {
-        bird.y -= 80    
+        bird.vy = -200   
     }
 
 })
+
+function isColliding(bird,column){
+    return !(
+        bird.y > column.y + column.h ||
+        bird.x > column.x + column.w ||
+        column.x > bird.x + bird.w ||
+        column.y > bird.y + bird.h
+    )
+}
 const draw = () => {
     ctx.drawImage(bg, 0, 0)
     ctx.drawImage(bird.img, bird.x, bird.y, bird.w, bird.h)
@@ -72,4 +98,14 @@ const draw = () => {
 }
 
 newColumns()
+bird.vy = -200
 gameLogic()
+
+document.querySelector('div').addEventListener('click', (e)=> {
+    newColumns()
+    bird.y = canvas.height/2
+    bird.ay = 250
+    bird.vy = 0
+    requestAnimationFrame(gameLogic)
+    game = true
+})
