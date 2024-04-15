@@ -8,11 +8,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 export const TracksContext = createContext();
 
 export function Tracks() {
-  
   const {
     Dialog
   } = Modal.useDialog();
-  const [tracks, setTracks] = useState(exampleTracks);
+
+  const localData = JSON.parse(localStorage.getItem('tracks'))
+  
+  const [tracks, setTracks] = useState(localData || exampleTracks);
   const [edit, setEdit] = useState(null)
   const [open, setOpen] = useState(false)
   
@@ -26,6 +28,10 @@ export function Tracks() {
     setOpen(true)
   }
   
+  useEffect(()=> {
+    localStorage.setItem("tracks", JSON.stringify(tracks))
+  }, [tracks])
+
   return (
     <TracksContext.Provider value={tracks}>
       <div className="mt-5">

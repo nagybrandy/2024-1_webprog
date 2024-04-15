@@ -44,7 +44,7 @@ export function TrackForm({ Dialog, handleShow, tracks, setTracks, open, setOpen
     if(edit === null) {
       let maxid = 0
       for (let i = 0; i < tracks.length; i++) {
-        if(maxid < tracks[i].id) maxid = tracks[i].id
+        if(maxii < tracks[i].id) maxid = tracks[i].id
       }
       setTracks([{...formState, id: ++maxid}, ...tracks])
     } else {
